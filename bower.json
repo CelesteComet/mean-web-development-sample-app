@@ -1,0 +1,12 @@
+{
+  "name": "MEAN",
+  "description": "stuff",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/CelesteComet/mean-web-development-sample-app",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

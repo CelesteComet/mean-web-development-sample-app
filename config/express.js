@@ -13,7 +13,11 @@ var morgan = require('morgan'),
     flash = require('connect-flash');
 
 module.exports = function() {
+
   var app = express();
+  
+  // Serving Static Files
+  app.use(express.static('./public'));
 
   // Mounting Application Middleware
 
@@ -55,9 +59,9 @@ module.exports = function() {
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
 
-  // Serving Static Files
+  
 
-  app.use(express.static('./public'));
+  
 
   return app;
 }
