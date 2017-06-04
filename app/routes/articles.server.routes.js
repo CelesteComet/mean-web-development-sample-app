@@ -1,5 +1,5 @@
-var users = require('../../app/controllers/user.server.controller')
-    articles = require('../../app/controllers/articles.server.controllers');
+var users = require('../../app/controllers/users.server.controller.js')
+    articles = require('../../app/controllers/articles.server.controller.js');
 
 module.exports = function(app) {
   app.route('/api/articles')
@@ -8,8 +8,8 @@ module.exports = function(app) {
 
   app.route('/api/articles/:articleId')
      .get(articles.read)
-     .put(users.requireLogin, articles.hasAuthorization, articles.update)
-     .delete(users.requireLogin, articles.hasAuthorization, articles.delete);
+     .put(users.requiresLogin, articles.hasAuthorization, articles.update)
+     .delete(users.requiresLogin, articles.hasAuthorization, articles.delete);
 
-  app.param('articleId', articles.articleById);
+  app.param('articleID', articles.articleByID);
 }

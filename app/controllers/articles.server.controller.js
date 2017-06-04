@@ -35,7 +35,7 @@ exports.create = function(req, res, next) {
   article.save(function(err) {
     if (err) {
       return res.status(400).send({
-        message: getErrorMessage(err);
+        message: getErrorMessage(err)
       })
     } else {
       res.json(article);
@@ -54,7 +54,7 @@ exports.update = function(req, res, next) {
   article.save(function(err) {
     if (err) {
       return res.status(400).send({
-        message: getErrorMessage(err);
+        message: getErrorMessage(err)
       })
     } else {
       res.json(article);
@@ -68,7 +68,7 @@ exports.delete = function(req, res, next) {
   article.remove(function(err) {
     if (err) {
       return res.status(400).send({
-        message: getErrorMessage(err);
+        message: getErrorMessage(err)
       })
     } else {
       res.json(article);
@@ -91,7 +91,7 @@ exports.list = function(req, res, next) {
 exports.hasAuthorization = function(req, res, next) {
   if(req.article.creator.id !== req.user.id) {
     return res.status(403).send({
-      message: 'User is not authorizated';
+      message: 'User is not authorizated'
     })
   }
   next();
