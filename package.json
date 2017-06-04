@@ -2,6 +2,7 @@
   "name": "MEAN",
   "version": "0.0.3",
   "dependencies": {
+    "angular-resource": "^1.6.4",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.8.0",
     "compression": "~1.0.11",
